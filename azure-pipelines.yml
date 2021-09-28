@@ -50,3 +50,25 @@ steps:
     targetPath: '$(Build.Repository.LocalPath)/Build/ArmTemplate' #replace with the package.json folder
     artifact: 'ArmTemplates'
     publishLocation: 'pipeline'
+
+# steps:
+# - task: AzureResourceGroupDeployment@1
+#   displayName: 'Azure Deployment:Create Or Update Resource Group action on DTNA-UAT'
+#   inputs:
+#     ConnectedServiceName: 'dtan-serviceconn'
+#     resourceGroupName: 'DTNA-UAT'
+#     location: 'Central India'
+#     csmFile: '$(System.DefaultWorkingDirectory)/_sivakrishnasunkara.ADF-DEMO/ArmTemplates/ARMTemplateForFactory.json'
+#     csmParametersFile: '$(System.DefaultWorkingDirectory)/_sivakrishnasunkara.ADF-DEMO/ArmTemplates/ARMTemplateParametersForFactory.json'
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: 'ARM Template deployment: Resource Group scope'
+  inputs:
+    azureResourceManagerConnection: 'dtan-serviceconn'
+    subscriptionId: 'd9cff28b-eba4-4cb6-b562-2d88c545f931'
+    resourceGroupName: 'DTNA-UAT'
+    location: 'Central India'
+    csmFile: '$(System.DefaultWorkingDirectory)/_adf_publish_source/DTNA-TSA-DEV/ARMTemplateForFactory.json'
+    csmParametersFile: '$(System.DefaultWorkingDirectory)/_adf_publish_source/DTNA-TSA-DEV/ARMTemplateParametersForFactory.json'
+    overrideParameters: '-factoryName "DTNA-TSA-UAT" -DTNA_KV_properties_typeProperties_baseUrl "https://KV-DTNA-UAT.vault.azure.net/" -blobsource_properties_typeProperties_connectionString_secretName "Blob-Secret-Conn"'
