@@ -19,7 +19,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: '$(Build.Repository.LocalPath)/Build/*' #replace with the package.json folder
+    workingDir: '$(Build.Repository.LocalPath)/Build' #replace with the package.json folder
     verbose: true
   displayName: 'Install npm package'
 
