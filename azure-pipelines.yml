@@ -61,7 +61,7 @@ steps:
 #     csmFile: '$(System.DefaultWorkingDirectory)/_sivakrishnasunkara.ADF-DEMO/ArmTemplates/ARMTemplateForFactory.json'
 #     csmParametersFile: '$(System.DefaultWorkingDirectory)/_sivakrishnasunkara.ADF-DEMO/ArmTemplates/ARMTemplateParametersForFactory.json'
 
-steps:
+# steps:
 - task: AzureResourceManagerTemplateDeployment@3
   displayName: 'ARM Template deployment: Resource Group scope'
   inputs:
