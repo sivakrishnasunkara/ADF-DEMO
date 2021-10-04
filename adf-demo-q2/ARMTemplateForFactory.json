@@ -36,7 +36,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataflow": {
-								"referenceName": "demo-dataflow",
+								"referenceName": "demo-dataflow1",
 								"type": "DataFlowReference",
 								"parameters": {},
 								"datasetParameters": {
@@ -62,7 +62,7 @@
 				"lastPublishTime": "2021-05-03T05:51:57Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/dataflows/demo-dataflow')]"
+				"[concat(variables('factoryId'), '/dataflows/demo-dataflow1')]"
 			]
 		},
 		{
@@ -316,7 +316,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/demo-dataflow')]",
+			"name": "[concat(parameters('factoryName'), '/demo-dataflow1')]",
 			"type": "Microsoft.DataFactory/factories/dataflows",
 			"apiVersion": "2018-06-01",
 			"properties": {
