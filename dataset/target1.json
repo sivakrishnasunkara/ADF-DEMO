@@ -1,5 +1,5 @@
 {
-	"name": "target",
+	"name": "target1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "bloblinkedservice",
